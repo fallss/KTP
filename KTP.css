@@ -1,0 +1,106 @@
+h1 {
+  text-align: center;
+  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.utama {
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
+.ktp {
+  position: relative;
+  border: 1px solid; /* Fixed missing semicolon */
+  border-radius: 15px;
+  background-image: url("ektp.png");
+  background-size: cover;
+  width: 800px;
+  height: 500px;
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  grid-template-areas:
+    "judul judul judul"
+    "kiri tengah kanan";
+  grid-template-columns: 25% 45% 30%;
+}
+
+.ktp .judul {
+  grid-area: judul;
+  font-size: 25px;
+}
+
+.ktp h4 {
+  /* Changed .h4 to h4 as h4 is a tag, not a class */
+  position: relative;
+  text-align: center;
+}
+
+.ktp .nikatas {
+  font-family: monospace;
+  position: relative;
+  font-size: 25px;
+  left: 40px;
+}
+
+.ktp .kiri {
+  grid-area: kiri;
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 40px;
+  top: -20px;
+  line-height: 0.5;
+}
+
+.ktp .kiri2 {
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
+  left: 60px; /* Fixed incorrect T60px to 60px */
+  line-height: 0.5;
+}
+
+.ktp .cetak {
+  grid-area: tengah;
+  position: relative;
+  font-weight: 600;
+  font-size: 16px;
+  top: -20px;
+  line-height: 0.5;
+}
+
+.ktp .goldarah {
+  position: relative;
+  top: -240px;
+  left: 200px;
+}
+
+.ktp .foto {
+  grid-area: kanan;
+  position: relative;
+  top: -30px;
+  border: 1px solid; /* Fixed missing semicolon */
+  width: 180px;
+  height: 240px;
+  background-image: url("biju.png"); /* Added single quotes around the URL */
+  background-position: -10px;
+  background-size: cover;
+  text-align: center;
+}
+
+.ktp .foto b {
+  position: relative;
+  top: 245px;
+}
+
+.ktp #cnik {
+  position: relative;
+  left: 90px;
+  letter-spacing: 4px;
+}
+
+.titikdua1 {
+  position: relative;
+  left: 90px;
+}

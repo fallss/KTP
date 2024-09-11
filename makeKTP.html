@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="KTP.css" />
+    <title>Belajar JS</title>
+  </head>
+
+  <body>
+    <h1>Pembuatan KKTP</h1>
+
+    <div class="utama">
+      <div class="input">
+        <pre>
+            NIK     : <input type="text" name="nik" id="nik" /> <br>
+            Nama     : <input type="text" name="nama" id="nama" /> <br>
+            Tempat/Tgl Lahir     : <input type="text" name="tempat" id="tempat" /> <input type="date" name="tanggal" id="tanggal">
+            Jenis Kelamin     : <select name="jk" id="jk">
+                                    <option value=""></option>
+                                    <option value="LAKI-LAKI"> LAKI-LAKI </option>
+                                    <option value="PEREMPUAN"> PEREMPUAN </option>
+                                </select> <br>
+
+                 Gol. Darah    : <select name="darah" id="darah">
+                                <option value="-"> - </option>
+                                <option value="A"> A</option>
+                                <option value="B"> B</option>
+                                <option value="AB"> AB</option>
+                                <option value="O"> O</option>
+                                </select> <br>
+                        Alamat        : <input type="text" name="alamat" id="alamat"> <br>
+                        RT/RW       :<input type="text" name="rtrw" id="rtrw"> <br>
+                        Kel/Desa  : <input type="text" name="desa" id="desa"> <br>
+                        Kecamatan      :<input type="text" name="kec" id="kec"> <br>
+                     Agama      : <select name="agama" id="agama">
+                                <option value=""> </option>
+                                <option value="ISLAM"> ISLAM</option>
+                                <option value="KRISTEN"> KRISTEN</option>
+                                <option value="HINDU"> HINDU</option>
+                                <option value="BUDHA"> BUDHA</option>
+                                <option value="KHONGHUCU"> KHONGHUCU</option>
+                                </select> <br>
+                                Status Perkawinan : <select name="status" id="status">
+                                    <option value=""> </option>
+                                    <option value="BELUM KAWIN"> BELUM KAWIN</option>
+                                    <option value="KAWIN"> KAWIN</option>
+                                    </select> <br>
+                Pekerjaan : <input type="text" name="kerja" id="kerja"> <br>
+                Kewarganegaraan : <input type="text" name="warga" id="warga"> <br>
+                Berlaku Hingga : : <input type="text" name="berlaku" id="berlaku"> <br>
+
+                <button onclick="cetak()">CETAK</button>
+        </pre>
+      </div>
+
+      <div class="ktp">
+        <div class="judul">
+          <h4>
+            PROVINSI JAWA BARAT <br />
+            KABUPATEN PURWAKARTA
+          </h4>
+          <b class="nikatas">
+            NIK <span class="titikdua1">:</span> <span id="cnik"></span>
+          </b>
+        </div>
+
+        <div class="kiri">
+          <p>Nama</p>
+          <p>Tempat/Tgl lahir</p>
+          <p>Jenis Kelamin</p>
+          <p>Alamat</p>
+          <br />
+          <p class="kiri">Rt/Rw</p>
+          <p class="kiri">Kel/Desa</p>
+          <p class="kiri">Kecamatan</p>
+          <p>Agama</p>
+          <p>Status Perkawinan</p>
+          <p>Pekerjaan</p>
+          <p>Kewarganegaraan</p>
+          <p>Berlaku Hingga</p>
+        </div>
+
+        <div class="cetak">
+          <p>: <span id="cnama"></span></p>
+          <p>: <span id="cttl"></span></p>
+          <p>: <span id="cjk"></span></p>
+          <p>: <span id="calamat"></span></p>
+          <p>: <span id="crtrw"></span></p>
+          <p>: <span id="cdesa"></span></p>
+          <p>: <span id="ckec"></span></p>
+          <p>: <span id="cagama"></span></p>
+          <p>: <span id="cstatus"></span></p>
+          <p>: <span id="ckerja"></span></p>
+          <p>: <span id="cwarga"></span></p>
+          <p>: <span id="cberlaku"></span></p>
+
+          <p class="goldarah">Gol. darah : <span id="cdarah"></span></p>
+        </div>
+
+        <div class="foto">
+          <b class="pwk"> PURWAKARTA </b> <br />
+          <b class="tgl"> 20-08-2001 </b>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function cetak() {
+        var nik = document.getElementById("nik").value;
+        var nama = document.getElementById("nama").value;
+        var tempat = document.getElementById("tempat").value;
+        var tanggal = document.getElementById("tanggal").value;
+        var jk = document.getElementById("jk").value;
+        var darah = document.getElementById("darah").value;
+        var alamat = document.getElementById("alamat").value;
+        var rtrw = document.getElementById("rtrw").value;
+        var desa = document.getElementById("desa").value;
+        var kec = document.getElementById("kec").value;
+        var agama = document.getElementById("agama").value;
+        var status = document.getElementById("status").value;
+        var kerja = document.getElementById("kerja").value;
+        var warga = document.getElementById("warga").value;
+        var berlaku = document.getElementById("berlaku").value;
+
+        // Mengubah Format Date
+        const tgl = tanggal.split("-");
+        var tahun = tgl[0];
+        var bulan = tgl[1];
+        var hari = tgl[2];
+        var tanggalbaru = hari + "-" + bulan + "-" + tahun;
+
+        document.getElementById("cnik").innerHTML = nik;
+        document.getElementById("cnama").innerHTML = nama;
+        document.getElementById("cttl").innerHTML = tempat + ", " + tanggalbaru;
+        document.getElementById("cjk").innerHTML = jk;
+        document.getElementById("cdarah").innerHTML = darah;
+        document.getElementById("calamat").innerHTML = alamat;
+        document.getElementById("crtrw").innerHTML = rtrw;
+        document.getElementById("cdesa").innerHTML = desa;
+        document.getElementById("ckec").innerHTML = kec;
+        document.getElementById("cagama").innerHTML = agama;
+        document.getElementById("cstatus").innerHTML = status;
+        document.getElementById("ckerja").innerHTML = kerja;
+        document.getElementById("cwarga").innerHTML = warga;
+        document.getElementById("cberlaku").innerHTML = berlaku;
+      }
+    </script>
+  </body>
+</html>
