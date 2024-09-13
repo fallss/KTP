@@ -4,22 +4,21 @@
     <link rel="stylesheet" href="KTP.css" />
     <title>Belajar JS</title>
   </head>
-
   <body>
-    <h1>Pembuatan KTP</h1>
+    <h1 class="glowing-text">Pembuatan KTP</h1>
 
     <div class="utama">
       <div class="input">
         <pre>
-            NIK     : <input type="text" name="nik" id="nik" /> <br>
-            Nama     : <input type="text" name="nama" id="nama" /> <br>
-            Tempat/Tgl Lahir     : <input type="text" name="tempat" id="tempat" /> <input type="date" name="tanggal" id="tanggal">
-            Jenis Kelamin     : <select name="jk" id="jk">
+          NIK     : <input type="text" name="nik" id="nik" /> <br>
+          Nama     : <input type="text" name="nama" id="nama" /> <br>
+  Tempat/Tgl Lahir     : <input type="text" name="tempat" id="tempat" /> <input type="date" name="tanggal" id="tanggal">
+          Jenis Kelamin     : <select name="jk" id="jk">
                                     <option value=""></option>
                                     <option value="LAKI-LAKI"> LAKI-LAKI </option>
                                     <option value="PEREMPUAN"> PEREMPUAN </option>
                                 </select> <br>
-                 Gol. Darah    : <select name="darah" id="darah">
+          Gol. Darah    : <select name="darah" id="darah">
                                 <option value="-"> - </option>
                                 <option value="A"> A</option>
                                 <option value="B"> B</option>
@@ -35,7 +34,7 @@
                                         <option value="ISLAM"> ISLAM</option>
                                         <option value="KRISTEN"> KRISTEN</option>
                                         <option value="HINDU"> HINDU</option>
-                                        <option value="BUDHA"> BUDHA</option>
+                                        <option value="BUDHA"> BUDDHA</option>
                                         <option value="KHONGHUCU"> KHONGHUCU</option>
                                       </select> <br>
                   Status Perkawinan : <select name="status" id="status">
@@ -47,56 +46,69 @@
                 Kewarganegaraan : <input type="text" name="warga" id="warga"> <br>
                 Berlaku Hingga  : <input type="text" name="berlaku" id="berlaku"> <br>
 
-                <button onclick="cetak()">CETAK</button>
+                <button onclick="cetak()" class="btn">CETAK</button>
         </pre>
       </div>
 
-      <div class="ktp">
-        <div class="judul">
-          <h4>
-            PROVINSI JAWA BARAT <br />
-            KABUPATEN PURWAKARTA
-          </h4>
-          <b class="nikatas">
-            NIK <span class="titikdua1">:</span> <span id="cnik"></span>
-          </b>
-        </div>
+      <!-- Flip Card Container -->
+      <div class="card-container">
+        <div class="flip-card">
+          <!-- Front of the card -->
+          <div class="flip-card-front">
+            <div class="ktp">
+              <div class="judul">
+                <h4>
+                  PROVINSI JAWA BARAT <br />
+                  KABUPATEN BANDUNG BARAT
+                </h4>
+                <b class="nikatas">
+                  NIK <span class="titikdua1">:</span> <span id="cnik"></span>
+                </b>
+              </div>
 
-        <div class="kiri">
-          <p>Nama</p>
-          <p>Tempat/Tgl lahir</p>
-          <p>Jenis Kelamin</p>
-          <p>Alamat</p>
-          <p class="kiri2">Rt/Rw</p>
-          <p class="kiri2">Kel/Desa</p>
-          <p class="kiri2">Kecamatan</p>
-          <p>Agama</p>
-          <p>Status Perkawinan</p>
-          <p>Pekerjaan</p>
-          <p>Kewarganegaraan</p>
-          <p>Berlaku Hingga</p>
-        </div>
+              <div class="kiri">
+                <p>Nama</p>
+                <p>Tempat/Tgl lahir</p>
+                <p>Jenis Kelamin</p>
+                <p>Alamat</p>
+                <p class="kiri2">RT/RW</p>
+                <p class="kiri2">Kel/Desa</p>
+                <p class="kiri2">Kecamatan</p>
+                <p>Agama</p>
+                <p>Status Perkawinan</p>
+                <p>Pekerjaan</p>
+                <p>Kewarganegaraan</p>
+                <p>Berlaku Hingga</p>
+              </div>
 
-        <div class="cetak">
-          <p>: <span id="cnama"></span></p>
-          <p>: <span id="cttl"></span></p>
-          <p>: <span id="cjk"></span></p>
-          <p>: <span id="calamat"></span></p>
-          <p>: <span id="crtrw"></span></p>
-          <p>: <span id="cdesa"></span></p>
-          <p>: <span id="ckec"></span></p>
-          <p>: <span id="cagama"></span></p>
-          <p>: <span id="cstatus"></span></p>
-          <p>: <span id="ckerja"></span></p>
-          <p>: <span id="cwarga"></span></p>
-          <p>: <span id="cberlaku"></span></p>
+              <div class="cetak">
+                <p>: <span id="cnama"></span></p>
+                <p>: <span id="cttl"></span></p>
+                <p>: <span id="cjk"></span></p>
+                <p>: <span id="calamat"></span></p>
+                <p>: <span id="crtrw"></span></p>
+                <p>: <span id="cdesa"></span></p>
+                <p>: <span id="ckec"></span></p>
+                <p>: <span id="cagama"></span></p>
+                <p>: <span id="cstatus"></span></p>
+                <p>: <span id="ckerja"></span></p>
+                <p>: <span id="cwarga"></span></p>
+                <p>: <span id="cberlaku"></span></p>
 
-          <p class="goldarah">Gol. darah : <span id="cdarah"></span></p>
-        </div>
+                <p class="goldarah">Gol. darah : <span id="cdarah"></span></p>
+              </div>
 
-        <div class="foto">
-          <b class="pwk"> PURWAKARTA </b> <br />
-          <b class="tgl"> 20-08-2001 </b>
+              <div class="foto">
+                <b class="pwk"> PURWAKARTA </b> <br />
+                <b class="tgl"> 20-08-2001 </b>
+              </div>
+            </div>
+          </div>
+
+          <!-- Back of the card -->
+          <div class="flip-card-back">
+            <!-- You can add any information or leave the back design only -->
+          </div>
         </div>
       </div>
     </div>

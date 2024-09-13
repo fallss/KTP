@@ -1,23 +1,57 @@
-h1 {
-  text-align: center;
-  font-size: 40px;
-  font-family: Arial, Helvetica, sans-serif;
+.glowing-text {
+  font-family: "Georgia", sans-serif;
+  font-size: 48px; /* Ukuran font besar untuk menarik perhatian */
+  font-weight: bol; /* Tebalkan teks */
+  color: #ff6f4e; /* Warna dasar teks */
+  text-align: center; /* Posisikan teks di tengah */
 }
 
 .utama {
   display: grid;
   grid-template-columns: 40% 60%;
+  background-image: url("1.jpg");
+}
+
+/* Flip Card Container */
+.card-container {
+  perspective: 1000px;
+}
+
+.flip-card {
+  width: 800px;
+  height: 500px;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  border: 1px solid #f1f1f1;
+  border-radius: 15px;
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+}
+
+.flip-card-front {
+  background-image: url("ektp.png");
+  background-size: cover;
+}
+
+.flip-card-back {
+  background-image: url("back.jpg");
+  background-size: cover;
+  transform: rotateY(180deg);
+}
+
+.card-container:hover .flip-card {
+  transform: rotateY(180deg);
 }
 
 .ktp {
-  position: relative;
-  border: 1px solid; /* Fixed missing semicolon */
-  border-radius: 15px;
-  background-image: url("ektp.png");
-  background-size: cover;
-  width: 800px;
-  height: 500px;
-  font-family: Arial, Helvetica, sans-serif;
   display: grid;
   grid-template-areas:
     "judul judul judul"
@@ -31,7 +65,6 @@ h1 {
 }
 
 .ktp h4 {
-  /* Changed .h4 to h4 as h4 is a tag, not a class */
   position: relative;
   text-align: center;
 }
@@ -40,6 +73,7 @@ h1 {
   font-family: monospace;
   position: relative;
   font-size: 25px;
+  bottom: 10px;
   left: 40px;
 }
 
@@ -57,7 +91,7 @@ h1 {
   position: relative;
   font-size: 16px;
   font-weight: 600;
-  left: 60px; /* Fixed incorrect T60px to 60px */
+  left: 60px;
   line-height: 0.5;
 }
 
@@ -80,10 +114,10 @@ h1 {
   grid-area: kanan;
   position: relative;
   top: -30px;
-  border: 1px solid; /* Fixed missing semicolon */
+  border: 1px solid;
   width: 180px;
   height: 240px;
-  background-image: url("biju.png"); /* Added single quotes around the URL */
+  background-image: url("biju.png");
   background-position: -10px;
   background-size: cover;
   text-align: center;
@@ -103,4 +137,47 @@ h1 {
 .titikdua1 {
   position: relative;
   left: 90px;
+}
+
+/* CSS untuk mengatur form */
+
+input[type="text"],
+input[type="date"],
+select {
+  width: 200px; /* Atur lebar input field */
+  padding: 5px; /* Padding di dalam input field */
+  border: 1px solid #ccc; /* Gaya border */
+  border-radius: 2px; /* Membuat sudut border sedikit melengkung */
+  box-sizing: border-box; /* Pastikan padding tidak menambah ukuran total input */
+}
+
+button {
+  width: 200px; /* Lebar tombol */
+  background-color: #ff6f4e; /* Warna latar tombol */
+  color: white; /* Warna teks tombol */
+  border: none; /* Menghapus border */
+  border-radius: 50px; /* Membuat tombol melingkar */
+  padding: 10px 5px; /* Ukuran padding di dalam tombol */
+  margin: 5px auto; /* Memberi margin agar tombol berada di tengah */
+  font-size: 16px; /* Ukuran font pada tombol */
+  cursor: pointer; /* Tampilkan pointer pada hover */
+  text-align: center; /* Posisikan teks di tengah */
+}
+
+button:hover {
+  background-color: #e65a39; /* Warna tombol saat dihover */
+}
+
+/* Input section */
+.input {
+  flex: 1 1 45%; /* Fleksibel sesuai ukuran layar */
+  max-width: 600px;
+  min-width: 280px; /* Atur lebar minimum untuk layar kecil */
+}
+
+/* Form input styling */
+.input pre {
+  font-size: 16px;
+  white-space: normal; /* Agar tidak terjadi pemaksaan spasi */
+  line-height: 2.3;
 }
