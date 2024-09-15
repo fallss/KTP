@@ -127,6 +127,11 @@
   position: relative;
   top: 245px;
 }
+.ktp .tandaTangan {
+  position: relative;
+  width: 250px;
+  bottom: -260px;
+}
 
 .ktp #cnik {
   position: relative;
